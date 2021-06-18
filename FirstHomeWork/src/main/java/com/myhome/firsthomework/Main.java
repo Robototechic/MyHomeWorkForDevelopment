@@ -5,10 +5,14 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
+        long start = System.currentTimeMillis();
         try {
-            ReadFile readFileFirst = new ReadFile("C:\\Users\\maksi\\Documents\\development\\FirstHomeWork\\fileMassiveNumberOne.csv");
-            ReadFile readFileSecond = new ReadFile("C:\\Users\\maksi\\Documents\\development\\FirstHomeWork\\fileMassiveNumberTwo.csv");
+            //надо б научиться работать с аргументами из args
+            ReadFile readFileFirst = new ReadFile("c:\\WS\\Maks\\MyHomeWorkForDevelopment\\FirstHomeWork\\fileMassiveNumberOne.csv");
+            ReadFile readFileSecond = new ReadFile("c:\\WS\\Maks\\MyHomeWorkForDevelopment\\FirstHomeWork\\fileMassiveNumberTwo.csv");
 
+            //если реализацию коллекции поменять с ArrayList на LinkedList то при тех же исходных данных отрабатывает вместо 2 сек 8 - объяснить почему
+            //подумать, нужны ли для данной задачи списки или оптимальней использовать другую коллекцию
             List<String> listFirst = new ArrayList<String>();
             List<String> listSecond = new ArrayList<String>();
             List<String> listThird = new ArrayList<String>();
@@ -41,6 +45,9 @@ public class Main {
         } catch (NumberFormatException nfe) {
             System.out.println("The file has an invalid format value: " + nfe.getMessage());
         }
+
+        System.out.println("TotalTimeMs= " + (System.currentTimeMillis()-start));
+
     }
 
 }
