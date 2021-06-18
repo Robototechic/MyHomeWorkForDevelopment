@@ -4,6 +4,8 @@ import java.util.List;
 
 public class FindMaxValueFromList {
 
+    //нужно ли тут использовать НЕстатичекую функцию?
+    //возвращаемое значение все таки лучше возвращать из функции, а не держать в качестве "входных" параметров
     public void funcFindMaxValueFromList(List<String> listThird, List<String> listFour) {
         int countMaxValueFromList = 3;
         for(int i = 0; i< countMaxValueFromList; i++) {

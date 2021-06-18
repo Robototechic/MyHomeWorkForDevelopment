@@ -15,6 +15,7 @@ public class ReadFile {
         this.path = path;
     }
 
+    //использоваие в данном случае класса кажется избыточным, по сравнению с простым статическим методом. Для чего сделано именно так?
     public List<String> readFileFunc () throws IOException {
 
         File file = new File(path);
@@ -33,6 +34,9 @@ public class ReadFile {
                 list.add(line);
             }
         }
+
+        //https://docs.oracle.com/javase/8/docs/api/java/io/InputStreamReader.html#close
+        fr.close();
 
         return list;
     }
