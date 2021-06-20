@@ -6,17 +6,9 @@ import java.util.List;
 
 public class ReadFile {
 
-    private final String path;
+    public static List<String> readFileFunc (String path) throws IOException, NumberFormatException {
 
-    List<String> list = new ArrayList<String>();
-
-    public ReadFile(String path) {
-
-        this.path = path;
-    }
-
-    public List<String> readFileFunc () throws IOException {
-
+        List<String> list = new ArrayList<String>();
         File file = new File(path);
         //создаем объект FileReader для объекта File
         FileReader fr = new FileReader(file);
@@ -26,13 +18,17 @@ public class ReadFile {
         String line = reader.readLine();
         list.add(line);
         while (line != null) {
-//            System.out.println(line);
             // считываем остальные строки в цикле
             line = reader.readLine();
             if (line != null) {
                 list.add(line);
             }
         }
+
+        for(int i=0; i<list.size(); i++) {
+            int paramFromFirstList = Integer.parseInt(list.get(i));
+        }
+        fr.close();
 
         return list;
     }

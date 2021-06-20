@@ -6,20 +6,13 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         try {
-            ReadFile readFileFirst = new ReadFile("C:\\Users\\maksi\\Documents\\development\\FirstHomeWork\\fileMassiveNumberOne.csv");
-            ReadFile readFileSecond = new ReadFile("C:\\Users\\maksi\\Documents\\development\\FirstHomeWork\\fileMassiveNumberTwo.csv");
 
-            List<String> listFirst = new ArrayList<String>();
-            List<String> listSecond = new ArrayList<String>();
+            String path = "C:\\Users\\maksi\\Documents\\myDevelopment\\FirstHomeWork\\fileMassiveNumberOne.csv";
+            List<String> listFirst = ReadFile.readFileFunc(path);
+
+            path = "C:\\Users\\maksi\\Documents\\myDevelopment\\FirstHomeWork\\fileMassiveNumberTwo.csv";
+            List<String> listSecond = ReadFile.readFileFunc(path);
             List<String> listThird = new ArrayList<String>();
-            List<String> listFour = new ArrayList<String>();
-            listFirst.addAll(0, readFileFirst.readFileFunc());
-            listSecond.addAll(0, readFileSecond.readFileFunc());
-            FindMaxValueFromList findMaxValueFromList = new FindMaxValueFromList();
-            CheckNumbersInList checkNumbersInList = new CheckNumbersInList();
-
-            checkNumbersInList.funcCheckNumberInList(listFirst);
-            checkNumbersInList.funcCheckNumberInList(listSecond);
 
             for(int i=0; i<listFirst.size(); i++) {
                 String paramFromFirstList = listFirst.get(i);
@@ -28,8 +21,7 @@ public class Main {
                 }
             }
             if(listThird.size() != 0) {
-                findMaxValueFromList.funcFindMaxValueFromList(listThird, listFour);
-                System.out.println("Result: " + listFour);
+                System.out.println("Result: " + FindMaxValueFromList.funcFindMaxValueFromList(listThird));
             }
             else {
                 System.out.println("No matches found in the files!");

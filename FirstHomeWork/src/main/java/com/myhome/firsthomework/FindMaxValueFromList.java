@@ -1,11 +1,14 @@
 package com.myhome.firsthomework;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FindMaxValueFromList {
 
-    public void funcFindMaxValueFromList(List<String> listThird, List<String> listFour) {
+    public static List<String> funcFindMaxValueFromList(List<String> listThird) {
         int countMaxValueFromList = 3;
+        List<String> finalList = new ArrayList<String>();
+
         for(int i = 0; i< countMaxValueFromList; i++) {
             int maxValueInList = 0;
             for(int j=0; j<listThird.size(); j++) {
@@ -15,10 +18,9 @@ public class FindMaxValueFromList {
                     maxValueInList = valueInList;
                 }
             }
-            listFour.add(String.valueOf(maxValueInList));
+            finalList.add(String.valueOf(maxValueInList));
             listThird.remove(String.valueOf(maxValueInList));
         }
+        return finalList;
     }
-
-
 }
