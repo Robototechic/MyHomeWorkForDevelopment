@@ -6,7 +6,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         try {
-
+            
             String path = "C:\\Users\\maksi\\Documents\\myDevelopment\\FirstHomeWork\\fileMassiveNumberOne.csv";
             List<String> listFirst = ReadFile.readFileFunc(path);
 
